@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="wasfetyMobile.LoginPage"
+             Title="Login">
+    <ContentPage.Content>
+        <Grid>
+            <Image
+                Aspect="Fill"
+                Source="bbg.png" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            <ScrollView>
+                <StackLayout Padding="0, 10, 0, 0 ">
+                    <Image WidthRequest="180" HeightRequest="180" Source="logo.png"/>
+
+                    <Label FontSize="40" FontFamily="Montserrat"  FontAttributes="Bold" Text="Wasfety" TextColor="Black" HorizontalTextAlignment="Center"/>
+
+                    <Label FontSize="20" FontFamily="Montserrat"  FontAttributes="Bold" Text="Snap.Read.Cook" TextColor="#73dbff" HorizontalTextAlignment="Center"/>
+
+                    <StackLayout Margin="30,0,30,0">
+                        <Entry 
+                        x:Name="EmailEntry" 
+                        Completed="EmailEntry_Completed"
+                        Keyboard="Email"
+                        TextColor="Black"                     
+                        Margin="10,0,0,10" 
+                        Placeholder="Email" 
+                        PlaceholderColor="Black"
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                    />
+
+                        <Entry                 
+                        x:Name="PasswordEntry" 
+                        Completed="PasswordEntry_Completed"
+                        TextColor="Black"
+                        FontSize="Small"
+                        Placeholder="Password" 
+                        Margin="10,0,0,10" 
+                        PlaceholderColor="Black"
+                        VerticalOptions="CenterAndExpand"
+                        IsPassword="True"
+                    />
+
+                        <Label IsVisible="False" HorizontalOptions="Center" Text="" x:Name="Errors" TextColor="Red" FontSize="Micro" />
+
+                        <Button 
+                            x:Name="LoginButton" 
+                            BackgroundColor="#73dbff"
+                            VerticalOptions="End" 
+                            HorizontalOptions="Fill" 
+                            CornerRadius="10"
+                            Text="Log in" 
+                            Clicked="LoginButtonClicked"
+                            Margin="0,0,0,30"
+                            BorderWidth="2"
+                        />
+
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

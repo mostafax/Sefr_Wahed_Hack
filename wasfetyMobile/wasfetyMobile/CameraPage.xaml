@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImageSource="cameraBack"
+             x:Class="wasfetyMobile.CameraPage">
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="ImageViewer"/>
+
+        <StackLayout 
+            x:Name="MealStackLayout"
+            IsVisible="False">
+            <ScrollView>
+                <Frame HasShadow="True" CornerRadius="20" >
+                    <StackLayout>
+
+                        <!-- Meal Image -->
+                        <Image 
+                            x:Name="MealImage"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                        />
+
+                        <!-- Meal Name -->
+                        <Label 
+                        x:Name="MealName"
+                        FontSize="15" 
+                        FontAttributes="Bold" 
+                        TextColor="Black" 
+                        HorizontalTextAlignment="Center"
+                        />
+
+                        <Label Text="Steps" />
+
+                        <!-- Meal Steps -->
+                        <StackLayout 
+                          x:Name="StepsStackLayout"
+                          VerticalOptions="FillAndExpand" 
+                        />
+
+                        <Label Text="Ingredients" />
+
+                        <!-- Get Random Meal -->
+                        <ListView 
+                          x:Name="IngredientsListView" 
+                          SelectionMode="None"
+                          HeightRequest="100" 
+                          VerticalOptions="FillAndExpand" 
+                          HasUnevenRows="True"
+                        />
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+        </StackLayout>
+        
+        <StackLayout Grid.Row="1">
+            <Label x:Name="UploadLabel" HorizontalOptions="Center" Text="{Binding State}"/>
+            <ProgressBar IsVisible="False" x:Name="UploadBar" Progress="{Binding Percentage}"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Button
+                    HorizontalOptions="FillAndExpand"
+                    x:Name="TakePhoto"
+                    RelativeLayout.XConstraint=
+                        "{ConstraintExpression 
+                            Type=RelativeToParent,
+                            Property=Width, 
+                            Factor=0.32 }"
+                    RelativeLayout.YConstraint=
+                    "{ConstraintExpression 
+                            Type=RelativeToParent,
+                            Property=Height,
+                            Factor=0.5 }"   
+                    CornerRadius="20"
+                    BorderRadius="20"
+                    TextColor="White"
+                    Text="Take Photo" 
+                    Clicked="TakePhoto_Clicked"
+                />
+                <Button 
+                       HorizontalOptions="FillAndExpand"
+                        x:Name="Upload_Image"
+                        RelativeLayout.XConstraint=
+                            "{ConstraintExpression 
+                                Type=RelativeToParent,
+                                Property=Width, 
+                                Factor=0.32 }"
+                        RelativeLayout.YConstraint=
+                        "{ConstraintExpression 
+                                Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.5 }"
+                        CornerRadius="20"
+                        BorderRadius="20"
+                        TextColor="White"
+                        Text="Upload Image" 
+                        Clicked="Upload_image"
+                    />
+            </StackLayout>
+            
+            <Button 
+                x:Name="SubmitButton"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression 
+                        Type=RelativeToParent,
+                        Property=Width, 
+                        Factor=0.32 }"
+            
+                RelativeLayout.YConstraint=
+                "{ConstraintExpression 
+                        Type=RelativeToParent,
+                        Property=Height,
+                        Factor=0.5 }"
+
+                CornerRadius="20"
+                BorderRadius="20"
+                TextColor="White"
+                Text="Submit" 
+                Clicked="SubmitClicked"
+            />
+        </StackLayout>
+    </Grid>
+</ContentPage>

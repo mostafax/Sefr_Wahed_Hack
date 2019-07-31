@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="wasfetyMobile.SearchPage">
+    <Grid>
+        <Image 
+            Source="Searchbg.png" 
+            Aspect="Fill"
+            Opacity="0.2"
+            IsOpaque="True"
+            VerticalOptions="Center" 
+        />
+        
+        <ScrollView IsVisible="False">
+            <Frame x:Name="MealDetailsFrame" HasShadow="False" CornerRadius="20">
+                <StackLayout Padding="5, 5, 5, 5">
+                    <Label 
+                        x:Name="MealName"
+                        FontSize="15"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center"
+                    />
+                    <StackLayout
+                        x:Name="StepsStackLayoutFrame"
+                        VerticalOptions="FillAndExpand"
+                    />
+                    <ListView
+                        x:Name="IngredientsListViewFrame"
+                        SelectionMode="None"
+                        HeightRequest="100"
+                        VerticalOptions="FillAndExpand"
+                        HasUnevenRows="True"
+                    />
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+            <Entry 
+                x:Name="QuerySearch"
+                TextColor="Black"
+                Placeholder="Meal Name"
+                PlaceholderColor="LightGray"
+                Margin="10, 0, 10, 0"
+                TextChanged="QuerySearch_TextChanged"
+                FontSize="Small"
+            />
+            <ListView 
+                x:Name="QueryResult"
+                SelectionMode="None"
+                HeightRequest="100"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                HasUnevenRows="True"
+            />
+        </StackLayout>
+    </Grid>
+</ContentPage>

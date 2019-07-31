@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="wasfetyMobile.Register"
+             mc:Ignorable="d"
+             Title="Register">
+    <ContentPage.Content>
+        <Grid>
+            <Image
+                Aspect="Fill"
+                Source="bbg.png" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+
+            <ScrollView Grid.Column="0" Grid.Row="0">
+                <StackLayout Padding="0, 10,0,0">
+
+                    <Image WidthRequest="180" HeightRequest="180" Source="logo.png"/>
+
+                    <Label FontSize="40" FontAttributes="Bold" FontFamily="Montserrat" Text="Wasfety" TextColor="Black" HorizontalTextAlignment="Center"/>
+
+                    <Label FontSize="20" FontAttributes="Bold" FontFamily="Montserrat" Text="Snap.Read.Cook" TextColor="#73dbff" HorizontalTextAlignment="Center"/>
+
+                    <StackLayout Margin="30,0,30,0">
+
+                        <Entry 
+                            x:Name="EmailEntry"  
+                            TextColor="Black"
+                            Placeholder="Email" 
+                            Margin="10,0,10,0"
+                            PlaceholderColor="Black"
+                            Keyboard="Email"
+                            VerticalOptions="CenterAndExpand"
+                            Completed="EmailEntry_Completed"
+                            FontSize="Small"
+                        />
+
+                        <Entry                      
+                            x:Name="PasswordEntry" 
+                            Completed="PasswordEntry_Completed"
+                            TextColor="Black"
+                            Placeholder="Password" 
+                            Margin="10,0,10,0"
+                            PlaceholderColor="Black"
+                            VerticalOptions="CenterAndExpand"
+                            IsPassword="True"
+                            FontSize="Small"
+                        />
+
+                        <Entry           
+                            x:Name="ConfirmPasswordEntry" 
+                            Completed="ConfirmPasswordEntry_Completed"
+                            Margin="10,0,10,10" 
+                            TextColor="Black"
+                            Placeholder="Confirm Password" 
+                            PlaceholderColor="Black"
+                            VerticalOptions="CenterAndExpand"
+                            IsPassword="True"
+                            FontSize="Small"
+                        />
+
+                        <Label HorizontalOptions="Center" IsVisible="False" Text="" x:Name="Errors" TextColor="Red" FontSize="Micro" />
+
+                        <Button 
+                            x:Name="LoginButton" 
+                            BackgroundColor="#73dbff"
+                            VerticalOptions="End" 
+                            HorizontalOptions="Fill" 
+                            CornerRadius="10"
+                            Text="Register" 
+                            BorderWidth="2"
+                            Margin="0,0,0,30"
+                            Clicked="RegisterBtnClicked"
+                        />
+
+
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
